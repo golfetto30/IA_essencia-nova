@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Essência Nova | Mobilidade Urbana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container">
+            <span class="marca">Essência Nova</span>
+            <span class="subtitulo">
+                Mobilidade urbana e segurança no trânsito
+            </span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Título da página -->
+        <div class="titulo-pagina">
+            <p class="legenda">CIDADE • MOBILIDADE • SEGURANÇA</p>
+
+            <h1>Problemas no trânsito</h1>
+
+            <p>
+                Registre ocorrências e contribua para uma mobilidade
+                urbana mais segura, acessível e eficiente.
+            </p>
+        </div>
+
+        <!-- Mensagens -->
+        <p id="mensagem"
+           class="mensagem"
+           role="status"
+           aria-live="polite"
+           hidden>
+        </p>
+
+        <!-- Cadastro de ocorrência -->
+        <section class="painel" aria-labelledby="titulo-formulario">
+
+            <div class="painel-titulo">
+                <h2 id="titulo-formulario">Nova ocorrência</h2>
+                <span class="legenda">REGISTRO DE TRÂNSITO</span>
+            </div>
+
+            <form id="form-ocorrencia" class="formulario">
+
+                <div class="campos">
+
+                    <!-- ID -->
+                    <div class="campo">
+                        <label for="id-ocorrencia">ID</label>
+
+                        <input
+                            id="id-ocorrencia"
+                            type="text"
+                            placeholder="Automático"
+                            readonly>
+                    </div>
+
+                    <!-- Local -->
+                    <div class="campo">
+                        <label for="local-ocorrencia">
+                            Local da ocorrência
+                        </label>
+
+                        <input
+                            id="local-ocorrencia"
+                            type="text"
+                            maxlength="200"
+                            placeholder="Ex.: Avenida Brasil, Centro"
+                            required>
+                    </div>
+
+                    <!-- Categoria -->
+                    <div class="campo">
+                        <label for="tipo-ocorrencia">
+                            Tipo de problema
+                        </label>
+
+                        <select id="tipo-ocorrencia" required>
+                            <option value="">Selecione uma opção</option>
+
+                            <option value="Congestionamento">
+                                Congestionamento
+                            </option>
+
+                            <option value="Acidente">
+                                Acidente de trânsito
+                            </option>
+
+                            <option value="Buraco na via">
+                                Buraco na via
+                            </option>
+
+                            <option value="Semáforo com defeito">
+                                Semáforo com defeito
+                            </option>
+
+                            <option value="Falta de sinalização">
+                                Falta de sinalização
+                            </option>
+
+                            <option value="Problema no transporte público">
+                                Problema no transporte público
+                            </option>
+
+                            <option value="Falta de acessibilidade">
+                                Falta de acessibilidade
+                            </option>
+
+                            <option value="Outro">
+                                Outro
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Data -->
+                    <div class="campo">
+                        <label for="data-ocorrencia">
+                            Data da ocorrência
+                        </label>
+
+                        <input
+                            id="data-ocorrencia"
+                            type="date"
+                            required>
+                    </div>
+
+                    <!-- Bairro -->
+                    <div class="campo">
+                        <label for="bairro-ocorrencia">Bairro</label>
+
+                        <input
+                            id="bairro-ocorrencia"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Digite o bairro"
+                            required>
+                    </div>
+
+                    <!-- Gravidade -->
+                    <div class="campo">
+                <label for="gravidade-ocorrencia">
+                    Nível de gravidade
+                </label>
+
+                <select id="gravidade-ocorrencia" required>
+                    <option value="">Selecione a gravidade</option>
+                    <option value="Baixa">Baixa</option>
+                    <option value="Moderada">Moderada</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Crítica">Crítica</option>
+                </select>
+            </div>
+
+                </div>
+
+                <!-- Descrição -->
+                <div class="campo">
+                    <label for="descricao-ocorrencia">
+                        Descrição do problema
+                    </label>
+
+                    <textarea
+                        id="descricao-ocorrencia"
+                        rows="4"
+                        maxlength="1000"
+                        placeholder="Descreva o problema e seus impactos no trânsito..."
+                        required></textarea>
+                </div>
+
+                <!-- Botões -->
+                <div class="acoes">
+
+                    <button
+                        id="botao-salvar"
+                        class="botao botao-principal"
+                        type="submit">
+                        Salvar ocorrência
+                    </button>
+
+                    <button
+                        id="botao-limpar"
+                        class="botao botao-secundario"
+                        type="button">
+                        Limpar
+                    </button>
+
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Listagem -->
+        <section class="painel" aria-labelledby="titulo-lista">
+
+            <div class="painel-titulo">
+                <h2 id="titulo-lista">Ocorrências registradas</h2>
+
+                <span id="total-ocorrencias" class="legenda">
+                    Carregando...
+                </span>
+            </div>
+
+            <!-- Busca -->
+            <div class="barra-lista">
+
+                <form id="form-busca" class="busca">
+
+                    <label for="busca-id">Buscar por ID</label>
+
+                    <input
+                        id="busca-id"
+                        type="number"
+                        min="1"
+                        step="1"
+                        placeholder="Ex.: 1"
+                        required>
+
+                    <button
+                        class="botao botao-secundario"
+                        type="submit">
+                        Consultar
+                    </button>
+
+                </form>
+
+                <button
+                    id="botao-listar"
+                    class="botao botao-secundario"
+                    type="button">
+                    Atualizar lista
+                </button>
+
+            </div>
+
+            <!-- Tabela -->
+            <div class="tabela-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Local</th>
+                            <th scope="col">Tipo de problema</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Bairro</th>
+                            <th scope="col">Gravidade</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-ocorrencias">
+                        <tr>
+                            <td colspan="7" class="vazio">
+                                Carregando ocorrências...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+<!-- Painel do Assistente IA -->
+<section class="painel" aria-labelledby="titulo-chat">
+    <div class="painel-titulo">
+      <h2 id="titulo-chat">Assistente Essência Nova</h2>
+      <span class="legenda">MOBILIDADE URBANA</span>
+    </div>
+
+    <div id="chat-historico" style="height: 220px; overflow-y: auto; border: 1px solid #dccce8; border-radius: 8px; padding: 12px; margin-bottom: 12px; background: #ffffff;">
+      <p><strong>Assistente:</strong> Olá! Como posso ajudar sobre trânsito e mobilidade urbana hoje?</p>
+    </div>
+
+    <form id="form-chat" style="display: flex; gap: 8px;">
+      <input id="campo-pergunta" type="text" placeholder="Digite sua dúvida..." required style="flex: 1; padding: 10px; border: 1px solid #dccce8; border-radius: 6px;">
+      <button id="botao-chat" type="submit" style="padding: 10px 18px; background: #a8e6a3; color: #3b1d5e; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Enviar</button>
+    </form>
+  </section>
+        <!-- Rodapé -->
+        <footer class="rodape">
+            Essência Nova · Por uma mobilidade urbana melhor
+        </footer>
+
+    </main>
+
+    <script src="ocorrencias.js"></script>
+
+</body>
+</html>
