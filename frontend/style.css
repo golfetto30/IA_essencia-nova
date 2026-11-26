@@ -1,0 +1,556 @@
+
+/* ==========================================
+   ESSÊNCIA NOVA
+   Sistema de Mobilidade Urbana
+   CSS compartilhado do projeto
+========================================== */
+
+/* 1. Identidade visual e cores */
+
+:root {
+    --marinho: #173b35;
+    --laranja: #d7e8b0;
+    --laranja-hover: #c5dc91;
+    --azul-claro: #e4eee8;
+    --texto-suave: #52665e;
+    --fundo: #f5f7f2;
+    --borda: #d3ddd5;
+    --branco: #ffffff;
+    --vermelho: #b42318;
+    --vermelho-hover: #921d15;
+    --sucesso: #245037;
+  }
+  
+  /* 2. Configurações gerais */
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--marinho);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    width: min(1120px, 92%);
+    margin: auto;
+  }
+  
+  /* 3. Cabeçalho do sistema */
+  
+  .cabecalho {
+    background: var(--marinho);
+    color: var(--azul-claro);
+    padding: 24px 0;
+    border-bottom: 5px solid var(--laranja);
+  }
+  
+  .cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .marca {
+    color: var(--branco);
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .subtitulo {
+    font-size: 14px;
+    color: var(--azul-claro);
+  }
+  
+  /* 4. Títulos e textos */
+  
+  .titulo-pagina {
+    margin: 32px 0 24px;
+  }
+  
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 34px;
+    margin-bottom: 4px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  .titulo-pagina > p:last-child {
+    color: var(--texto-suave);
+  }
+  
+  .legenda {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  
+  .titulo-pagina .legenda {
+    color: var(--texto-suave);
+    margin-bottom: 2px;
+  }
+  
+  /* 5. Indicadores de mobilidade */
+  
+  .resumo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+  
+  .indicador {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 18px #173b3508;
+  }
+  
+  .indicador-titulo {
+    color: var(--texto-suave);
+    font-size: 14px;
+  }
+  
+  .indicador-valor {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 6px;
+  }
+  
+  .indicador-detalhe {
+    color: var(--texto-suave);
+    font-size: 12px;
+  }
+  
+  /* 6. Painéis e formulários */
+  
+  .painel {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 26px;
+    box-shadow: 0 5px 18px #173b3508;
+  }
+  
+  .painel-titulo {
+    background: var(--azul-claro);
+    padding: 17px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--borda);
+  }
+  
+  .formulario {
+    padding: 26px 24px;
+  }
+  
+  .campos {
+    display: grid;
+    grid-template-columns: 120px 1fr 230px;
+    gap: 20px;
+  }
+  
+  .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* 7. Entradas e acessibilidade */
+  
+  input,
+  button,
+  select,
+  textarea {
+    font: inherit;
+  }
+  
+  input:not([type="range"]),
+  select,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    color: var(--marinho);
+    background: var(--branco);
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  input[readonly] {
+    background: var(--fundo);
+    color: var(--texto-suave);
+  }
+  
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible {
+    outline: 3px solid #578d73;
+    outline-offset: 3px;
+  }
+  
+  /* 8. Campos complementares */
+  
+  .campo-largo {
+    grid-column: span 2;
+  }
+  
+  .campo-completo {
+    grid-column: 1 / -1;
+  }
+  
+  .campo-limite {
+    margin: 28px 0;
+  }
+  
+  .linha,
+  .escala {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  output {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin: 12px 0;
+    accent-color: var(--marinho);
+    cursor: pointer;
+    height: 24px;
+  }
+  
+  .escala {
+    color: var(--texto-suave);
+    font-size: 13px;
+  }
+  
+  /* 9. Botões e ações */
+  
+  .acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .botao {
+    border: 1px solid var(--marinho);
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  
+  .botao-principal {
+    background: var(--laranja);
+    color: var(--marinho);
+    border-color: var(--laranja);
+  }
+  
+  .botao-principal:hover {
+    background: var(--laranja-hover);
+  }
+  
+  .botao-secundario {
+    background: var(--branco);
+    color: var(--marinho);
+  }
+  
+  .botao-secundario:hover {
+    background: var(--azul-claro);
+  }
+  
+  .botao-perigo {
+    background: var(--vermelho);
+    color: var(--branco);
+    border-color: var(--vermelho);
+  }
+  
+  .botao-perigo:hover {
+    background: var(--vermelho-hover);
+  }
+  
+  .botao:disabled {
+    opacity: 0.55;
+    cursor: wait;
+  }
+  
+  /* 10. Barra de consulta */
+  
+  .barra-lista {
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+  }
+  
+  .busca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .busca input {
+    max-width: 140px;
+  }
+  
+  .filtros {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .filtros .campo {
+    min-width: 160px;
+  }
+  
+  /* 11. Tabela de ocorrências */
+  
+  .tabela-container {
+    overflow-x: auto;
+    padding: 0 24px 24px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--azul-claro);
+    font-size: 13px;
+  }
+  
+  th,
+  td {
+    padding: 15px 12px;
+    border: 1px solid var(--borda);
+  }
+  
+  tbody tr:nth-child(even) {
+    background: #f6f9f6;
+  }
+  
+  td:last-child {
+    white-space: nowrap;
+  }
+  
+  td .botao {
+    padding: 6px 12px;
+    font-size: 13px;
+    margin: 2px 6px 2px 0;
+  }
+  
+  .vazio {
+    text-align: center;
+    color: var(--texto-suave);
+    padding: 28px;
+  }
+  
+  /* 12. Situação das ocorrências */
+  
+  .status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .status-pendente {
+    background: #fff0d1;
+    color: #805000;
+  }
+  
+  .status-analise {
+    background: #e4eee8;
+    color: #173b35;
+  }
+  
+  .status-resolvido {
+    background: #e1f4e5;
+    color: #245037;
+  }
+  
+  /* 13. Níveis de gravidade */
+  
+  .gravidade-baixa {
+    color: #245037;
+  }
+  
+  .gravidade-media {
+    color: #996000;
+    font-weight: bold;
+  }
+  
+  .gravidade-alta {
+    color: var(--vermelho);
+    font-weight: bold;
+  }
+  
+  /* 14. Mensagens do sistema */
+  
+  .mensagem {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border: 1px solid #98baa9;
+    border-radius: 6px;
+    background: #eaf6ed;
+    color: var(--sucesso);
+  }
+  
+  .mensagem.erro {
+    background: #fff0eb;
+    border-color: #d5a18a;
+    color: #79321d;
+  }
+  
+  .mensagem:empty {
+    display: none;
+  }
+  
+  /* 15. Rodapé */
+  
+  .rodape {
+    color: var(--texto-suave);
+    text-align: center;
+    font-size: 12px;
+    padding: 0 0 26px;
+  }
+  
+  /* 16. Responsividade para tablets */
+  
+  @media (max-width: 900px) {
+    .resumo {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .campos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .campo-largo {
+      grid-column: span 1;
+    }
+  }
+  
+  /* 17. Responsividade para celulares */
+  
+  @media (max-width: 760px) {
+    .campos {
+      grid-template-columns: 1fr;
+    }
+  
+    .campo-largo,
+    .campo-completo {
+      grid-column: auto;
+    }
+  
+    .barra-lista,
+    .busca,
+    .filtros {
+      flex-wrap: wrap;
+    }
+  
+    .painel-titulo {
+      align-items: start;
+      flex-direction: column;
+    }
+  
+    .subtitulo,
+    .escala span:nth-child(2) {
+      display: none;
+    }
+  
+    .marca {
+      font-size: 22px;
+    }
+  
+    .formulario,
+    .barra-lista {
+      padding: 20px 16px;
+    }
+  
+    .tabela-container {
+      padding: 0 16px 20px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .resumo {
+      gap: 10px;
+    }
+  
+    .indicador {
+      padding: 14px;
+    }
+  
+    .indicador-valor {
+      font-size: 25px;
+    }
+  
+    .acoes .botao {
+      flex: 1;
+    }
+  }
+  
+  /* 18. Ajustes para telas muito estreitas */
+  
+  @media (max-width: 420px) {
+    .resumo {
+      grid-template-columns: 1fr;
+    }
+  
+    .acoes {
+      flex-direction: column;
+    }
+  
+    .acoes .botao {
+      width: 100%;
+    }
+  
+    .marca {
+      font-size: 20px;
+    }
+  }
+  
