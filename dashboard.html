@@ -1,0 +1,1275 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Essência Nova | Painel de Mobilidade
+  </title>
+  <style>
+   :root{
+  --bg:#f4f6fb;
+  --panel:#fff;
+  --ink:#182238;
+  --muted:#758099;
+  --line:#e8ecf3;
+  --nav:#111d35;
+  --blue:#4568e8;
+  --teal:#18a999;
+  --orange:#f2a64a;
+  --purple:#8a70d6;
+  --red:#e16d78;
+  --shadow:0 8px 28px rgba(24,39,75,.06)}
+  *{
+    box-sizing:border-box}
+    body{
+    margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+      .layout{
+        display:grid;
+        grid-template-columns:245px 1fr;
+        min-height:100vh}
+        .sidebar{
+          background:var(--nav);
+          color:#dbe3f4;
+          padding:27px 18px;
+          display:flex;
+          flex-direction:column}
+          .brand{
+            display:flex;
+            align-items:center;
+            gap:11px;
+            font-weight:750;
+            font-size:17px;
+            padding:0 10px 35px}
+            .logo{
+              width:34px;
+              height:34px;
+              border-radius:11px;
+              background:linear-gradient(135deg,#6d8cff,#25c3b2);
+              display:grid;
+              place-items:center;
+              color:white;
+              font-weight:900}
+              .navlabel{
+                color:#7888a8;
+                text-transform:uppercase;
+                letter-spacing:1.3px;
+                font-size:10px;
+                font-weight:700;
+                padding:0 12px 10px}
+                .nav a{
+                  display:flex;
+                  gap:12px;
+                  align-items:center;
+                  color:#aebbd3;
+                  text-decoration:none;
+                  padding:11px 13px;
+                  border-radius:10px;
+                  margin:3px 0}
+                  .nav a.active,.nav a:hover{
+                    background:#243453;
+                    color:#fff}
+                    .nav .ico{
+                      width:19px;
+                      text-align:center;
+                      font-size:16px}
+                      .sidefoot{
+                        margin-top:auto;
+                        border-top:1px solid #293957;
+                        padding:18px 10px 0;
+                        color:#8796b2;
+                        font-size:11px}
+                        .main{
+                          padding:30px clamp(18px,3vw,42px);
+                          max-width:1600px;
+                          width:100%;
+                          margin:auto}
+                          .top{
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:flex-start;
+                            gap:20px;
+                            margin-bottom:26px}
+                            .eyebrow{
+                              color:var(--blue);
+                              font-size:11px;
+                              font-weight:800;
+                              letter-spacing:1.5px;
+                              text-transform:uppercase}
+                              .h1{
+                                font-size:28px;
+                                letter-spacing:-.8px;
+                                margin:5px 0 4px}
+                                .sub{
+                                  color:var(--muted)}
+                                  .actions{
+                                    display:flex;
+                                    gap:9px;
+                                    flex-wrap:wrap}
+                                    .btn{
+                                      border:1px solid var(--line);
+                                      background:#fff;
+                                      border-radius:10px;
+                                      padding:10px 14px;
+                                      font-weight:650;
+                                      color:#34415c;
+                                      cursor:pointer}
+                                      .btn.primary{
+                                        background:var(--blue);
+                                        color:#fff;
+                                        border-color:var(--blue)}
+                                        .filters{
+                                          display:flex;
+                                          gap:12px;
+                                          align-items:end;
+                                          flex-wrap:wrap;
+                                          background:#fff;
+                                          border:1px solid var(--line);
+                                          padding:14px 16px;
+                                          border-radius:14px;
+                                          box-shadow:var(--shadow);
+                                          margin-bottom:18px}
+                                          .field{
+                                            display:grid;
+                                            gap:5px;
+                                            min-width:170px}
+                                            .field label{
+                                              font-size:11px;
+                                              color:var(--muted);
+                                              font-weight:700}
+                                              .field select,.field input{
+                                                border:1px solid var(--line);
+                                                border-radius:8px;
+                                                padding:9px 10px;
+                                                background:#fff;
+                                                color:var(--ink);
+                                                font:inherit}
+                                                .filter-note{
+                                                  margin-left:auto;
+                                                  color:var(--muted);
+                                                  font-size:12px;
+                                                  align-self:center}
+                                                  .kpis{
+                                                    display:grid;
+                                                    grid-template-columns:repeat(4,minmax(0,1fr));
+                                                    gap:14px;
+                                                    margin-bottom:18px}
+                                                    .card{
+                                                      background:var(--panel);
+                                                      border:1px solid var(--line);
+                                                      border-radius:15px;
+                                                      box-shadow:var(--shadow);
+                                                      padding:18px}
+                                                      .kpihead{
+                                                        display:flex;
+                                                        justify-content:space-between;
+                                                        align-items:center;
+                                                        color:var(--muted);
+                                                        font-size:12px;
+                                                        font-weight:650}
+                                                        .kpiicon{
+                                                          width:34px;
+                                                          height:34px;
+                                                          border-radius:10px;
+                                                          display:grid;
+                                                          place-items:center;
+                                                          background:#edf1ff;
+                                                          color:var(--blue);
+                                                          font-size:17px}
+                                                          .kpinum{
+                                                            font-size:29px;
+                                                            font-weight:780;
+                                                            letter-spacing:-1px;
+                                                            margin-top:12px}
+                                                            .kpismall{
+                                                              font-size:11px;
+                                                              color:var(--muted);
+                                                              margin-top:2px}
+                                                              .grid2{
+                                                                display:grid;
+                                                                grid-template-columns:1.1fr .9fr;
+                                                                gap:16px;
+                                                                margin-bottom:16px}
+                                                                .grid3{
+                                                                  display:grid;
+                                                                  grid-template-columns:1fr 1fr 1fr;
+                                                                  gap:16px;
+                                                                  margin-bottom:16px}
+                                                                  .cardtitle{
+                                                                    font-size:14px;
+                                                                    font-weight:750;
+                                                                    margin:0}
+                                                                    .carddesc{
+                                                                      font-size:11px;
+                                                                      color:var(--muted);
+                                                                      margin:3px 0 18px}
+                                                                      .bars{
+                                                                        display:grid;
+                                                                        gap:15px}
+                                                                        .barrow{
+                                                                          display:grid;
+                                                                          grid-template-columns:minmax(120px,180px) 1fr 28px;
+                                                                          gap:12px;
+                                                                          align-items:center;
+                                                                          font-size:12px}
+                                                                          .barlabel{
+                                                                            white-space:nowrap;
+                                                                            overflow:hidden;
+                                                                            text-overflow:ellipsis;
+                                                                            color:#48536b}
+                                                                            .track{
+                                                                              height:9px;
+                                                                              background:#eef1f7;
+                                                                              border-radius:10px;
+                                                                              overflow:hidden}
+                                                                              .fill{
+                                                                                height:100%;
+                                                                                border-radius:10px;
+                                                                                background:linear-gradient(90deg,#5877ef,#7b91f4)}
+                                                                                .barval{
+                                                                                  text-align:right;
+                                                                                  font-weight:750}
+                                                                                  .donutwrap{
+                                                                                    display:flex;
+                                                                                    align-items:center;
+                                                                                    justify-content:center;
+                                                                                    gap:26px;
+                                                                                    min-height:190px}
+                                                                                    .donut{
+                                                                                      width:158px;
+                                                                                      height:158px;
+                                                                                      border-radius:50%;
+                                                                                      background:conic-gradient(var(--blue) 0 50%,var(--teal) 50% 85%,var(--orange) 85% 100%);
+                                                                                      position:relative;
+                                                                                      flex:none}
+                                                                                      .donut:after{
+                                                                                        content:"";
+                                                                                        position:absolute;
+                                                                                        inset:25px;
+                                                                                        background:#fff;
+                                                                                        border-radius:50%}
+                                                                                        .donutcenter{
+                                                                                          position:absolute;
+                                                                                          inset:0;
+                                                                                          z-index:1;
+                                                                                          display:grid;
+                                                                                          place-content:center;
+                                                                                          text-align:center;
+                                                                                          font-size:25px;
+                                                                                          font-weight:800}
+                                                                                          .donutcenter small{
+                                                                                            font-size:10px;
+                                                                                            color:var(--muted);
+                                                                                            font-weight:600}
+                                                                                            .legend{
+                                                                                              display:grid;
+                                                                                              gap:12px}
+                                                                                              .leg{
+                                                                                                display:flex;
+                                                                                                align-items:center;
+                                                                                                gap:8px;
+                                                                                                font-size:12px}
+                                                                                                .dot{
+                                                                                                  width:9px;
+                                                                                                  height:9px;
+                                                                                                  border-radius:3px}
+                                                                                                  .leg b{
+                                                                                                    margin-left:auto}
+                                                                                                    .insight{
+                                                                                                      background:#f5f7ff;
+                                                                                                      border:1px solid #e6eaff;
+                                                                                                      border-radius:12px;
+                                                                                                      padding:13px 14px;
+                                                                                                      color:#4a5877;
+                                                                                                      font-size:12px;
+                                                                                                      margin-top:16px}
+                                                                                                      .insight strong{
+                                                                                                        color:#26385f}
+                                                                                                        .listbars .barrow{
+                                                                                                          grid-template-columns:minmax(120px,155px) 1fr 24px}
+                                                                                                          .tablecard{
+                                                                                                            padding:0;
+                                                                                                            overflow:hidden}
+                                                                                                            .tabletop{
+                                                                                                              padding:18px 20px;
+                                                                                                              display:flex;
+                                                                                                              justify-content:space-between;
+                                                                                                              align-items:center;
+                                                                                                              gap:12px}
+                                                                                                              .tabletop input{
+                                                                                                                border:1px solid var(--line);
+                                                                                                                border-radius:8px;
+                                                                                                                padding:9px 11px;
+                                                                                                                min-width:210px}
+                                                                                                                .scroll{
+                                                                                                                  overflow:auto}
+                                                                                                                  table{
+                                                                                                                    border-collapse:collapse;
+                                                                                                                    width:100%;
+                                                                                                                    min-width:850px}
+                                                                                                                    th{
+                                                                                                                      text-align:left;
+                                                                                                                      color:#7c879e;
+                                                                                                                      font-size:10px;
+                                                                                                                      text-transform:uppercase;
+                                                                                                                      letter-spacing:.7px;
+                                                                                                                      background:#fafbfe;
+                                                                                                                      padding:12px 15px;
+                                                                                                                      border-top:1px solid var(--line)}
+                                                                                                                      td{
+                                                                                                                        padding:13px 15px;
+                                                                                                                        border-top:1px solid var(--line);
+                                                                                                                        font-size:12px;
+                                                                                                                        color:#4c5870;
+                                                                                                                        vertical-align:top}
+                                                                                                                        td:first-child{
+                                                                                                                          font-weight:750;
+                                                                                                                          color:#26334c}
+                                                                                                                          .pill{
+                                                                                                                            display:inline-block;
+                                                                                                                            padding:4px 8px;
+                                                                                                                            border-radius:20px;
+                                                                                                                            background:#eef1ff;
+                                                                                                                            color:#4d65cf;
+                                                                                                                            font-size:10px;
+                                                                                                                            font-weight:700}
+                                                                                                                            .empty{
+                                                                                                                              text-align:center;
+                                                                                                                              padding:30px;
+                                                                                                                              color:var(--muted)}
+                                                                                                                              .footer{
+                                                                                                                                color:#9aa3b5;
+                                                                                                                                font-size:10px;
+                                                                                                                                text-align:right;
+                                                                                                                                padding:18px 2px}
+                                                                                                                                .ranklist{
+                                                                                                                                  display:grid;
+                                                                                                                                  gap:11px}
+                                                                                                                                  .rankitem{
+                                                                                                                                    display:flex;
+                                                                                                                                    justify-content:space-between;
+                                                                                                                                    gap:10px;
+                                                                                                                                    font-size:12px;
+                                                                                                                                    border-bottom:1px solid #f0f2f6;
+                                                                                                                                    padding-bottom:9px}
+                                                                                                                                    .rankitem span{
+                                                                                                                                      color:#5b667d}
+                                                                                                                                      .rankitem b{
+                                                                                                                                        color:#27344d}
+                                                                                                                                        .tag{
+                                                                                                                                          font-size:10px;
+                                                                                                                                          color:#6b7892;
+                                                                                                                                          background:#f1f3f8;
+                                                                                                                                          border-radius:6px;
+                                                                                                                                          padding:3px 7px}
+                                                                                                                                          @media(max-width:1050px){
+                                                                                                                                            .layout{
+                                                                                                                                              grid-template-columns:1fr}
+                                                                                                                                              .sidebar{
+                                                                                                                                                display:none}
+                                                                                                                                                .kpis{
+                                                                                                                                                  grid-template-columns:repeat(2,1fr)}
+                                                                                                                                                  .grid2,.grid3{
+                                                                                                                                                    grid-template-columns:1fr}
+                                                                                                                                                  }
+                                                                                                                                                  @media(max-width:600px){
+                                                                                                                                                    .main{
+                                                                                                                                                      padding:20px 13px}
+                                                                                                                                                      .top{
+                                                                                                                                                        display:block}
+                                                                                                                                                        .actions{
+                                                                                                                                                          margin-top:15px}
+                                                                                                                                                          .kpis{
+                                                                                                                                                            gap:9px}
+                                                                                                                                                            .card{
+                                                                                                                                                              padding:14px}
+                                                                                                                                                              .kpinum{
+                                                                                                                                                                font-size:24px}
+                                                                                                                                                                .donutwrap{
+                                                                                                                                                                  gap:14px}
+                                                                                                                                                                  .donut{
+                                                                                                                                                                    width:130px;
+                                                                                                                                                                    height:130px}
+                                                                                                                                                                    .barrow{
+                                                                                                                                                                      grid-template-columns:105px 1fr 22px;
+                                                                                                                                                                      gap:7px}
+                                                                                                                                                                      .field{
+                                                                                                                                                                        flex:1;
+                                                                                                                                                                        min-width:130px}
+                                                                                                                                                                        .filter-note{
+                                                                                                                                                                          margin:0;
+                                                                                                                                                                          width:100%}
+                                                                                                                                                                        }
+                                                                                                                                                                        @media print{
+                                                                                                                                                                          .sidebar,.actions,.filters,.tabletop input,.footer{
+                                                                                                                                                                            display:none!important}
+                                                                                                                                                                            .layout{
+                                                                                                                                                                              display:block}
+                                                                                                                                                                              .main{
+                                                                                                                                                                                padding:0;
+                                                                                                                                                                                max-width:none}
+                                                                                                                                                                                .card{
+                                                                                                                                                                                  box-shadow:none;
+                                                                                                                                                                                  break-inside:avoid}
+                                                                                                                                                                                  .grid2,.grid3{
+                                                                                                                                                                                    break-inside:avoid}
+                                                                                                                                                                                    body{
+                                                                                                                                                                                      background:white}
+                                                                                                                                                                                    }
+                                                                                                                                                                                    /* Tema claro: verde suave, lilás e branco */
+                                                                                                                                                                                    :root{
+                                                                                                                                                                                      --bg:#f7faf7;
+                                                                                                                                                                                      --panel:#ffffff;
+                                                                                                                                                                                      --ink:#344238;
+                                                                                                                                                                                      --muted:#78877d;
+                                                                                                                                                                                      --line:#e5eee7;
+                                                                                                                                                                                      --nav:#f0eafb;
+                                                                                                                                                                                      --blue:#9b83c9;
+                                                                                                                                                                                      --teal:#9bcbb0;
+                                                                                                                                                                                      --orange:#d9c4ed;
+                                                                                                                                                                                      --purple:#a58bcf;
+                                                                                                                                                                                      --red:#d8a8bd;
+                                                                                                                                                                                      --shadow:0 8px 26px rgba(103,132,111,.08)}
+                                                                                                                                                                                      body{
+                                                                                                                                                                                        background:linear-gradient(135deg,#f8fcf8 0%,#f7f4fc 100%);
+                                                                                                                                                                                        color:#344238}
+                                                                                                                                                                                        .sidebar{
+                                                                                                                                                                                          background:#f0eafb;
+                                                                                                                                                                                          color:#574b6b;
+                                                                                                                                                                                          border-right:1px solid #e6def2}
+                                                                                                                                                                                          .brand{
+                                                                                                                                                                                            color:#514466}
+                                                                                                                                                                                            .logo{
+                                                                                                                                                                                              background:linear-gradient(135deg,#b9dfa9,#c9b6e8);
+                                                                                                                                                                                              color:#435345}
+                                                                                                                                                                                              .navlabel{
+                                                                                                                                                                                                color:#9a8bb0}
+                                                                                                                                                                                                .nav a{
+                                                                                                                                                                                                  color:#716780}
+                                                                                                                                                                                                  .nav a.active,.nav a:hover{
+                                                                                                                                                                                                    background:#e2d8f2;
+                                                                                                                                                                                                    color:#514466}
+                                                                                                                                                                                                    .sidefoot{
+                                                                                                                                                                                                      border-top:1px solid #e1d8ed;
+                                                                                                                                                                                                      color:#8b8098}
+                                                                                                                                                                                                      .eyebrow{
+                                                                                                                                                                                                        color:#8a72b5}
+                                                                                                                                                                                                        .h1{
+                                                                                                                                                                                                          color:#344238}
+                                                                                                                                                                                                          .sub{
+                                                                                                                                                                                                            color:#7c897f}
+                                                                                                                                                                                                            .btn{
+                                                                                                                                                                                                              background:#fff;
+                                                                                                                                                                                                              border-color:#e3eae3;
+                                                                                                                                                                                                              color:#536357}
+                                                                                                                                                                                                              .btn.primary{
+                                                                                                                                                                                                                background:#a8d3b3;
+                                                                                                                                                                                                                color:#294b35;
+                                                                                                                                                                                                                border-color:#a8d3b3}
+                                                                                                                                                                                                                .filters{
+                                                                                                                                                                                                                  background:rgba(255,255,255,.92);
+                                                                                                                                                                                                                  border-color:#e5eee7}
+                                                                                                                                                                                                                  .field select,.field input,.tabletop input{
+                                                                                                                                                                                                                    border-color:#e4ebe4;
+                                                                                                                                                                                                                    background:#fcfefc}
+                                                                                                                                                                                                                    .card{
+                                                                                                                                                                                                                      border-color:#e5eee7;
+                                                                                                                                                                                                                      background:#fff}
+                                                                                                                                                                                                                      .kpiicon{
+                                                                                                                                                                                                                        background:#edf7ee;
+                                                                                                                                                                                                                        color:#719e7c}
+                                                                                                                                                                                                                        .track{
+                                                                                                                                                                                                                          background:#eff5ef}
+                                                                                                                                                                                                                          .fill{
+                                                                                                                                                                                                                            background:linear-gradient(90deg,#a9d6b2,#c5b3e5)}
+                                                                                                                                                                                                                            .donut:after{
+                                                                                                                                                                                                                              background:#fff}
+                                                                                                                                                                                                                              .insight{
+                                                                                                                                                                                                                                background:#f3f8f1;
+                                                                                                                                                                                                                                border-color:#e3efe3;
+                                                                                                                                                                                                                                color:#596b5c}
+                                                                                                                                                                                                                                .insight strong{
+                                                                                                                                                                                                                                  color:#496650}
+                                                                                                                                                                                                                                  th{
+                                                                                                                                                                                                                                    background:#f8fbf8;
+                                                                                                                                                                                                                                    color:#7b897e}
+                                                                                                                                                                                                                                    td{
+                                                                                                                                                                                                                                      color:#59675c}
+                                                                                                                                                                                                                                      td:first-child{
+                                                                                                                                                                                                                                        color:#405447}
+                                                                                                                                                                                                                                        .pill{
+                                                                                                                                                                                                                                          background:#f0eafb;
+                                                                                                                                                                                                                                          color:#78629e}
+                                                                                                                                                                                                                                          .tag{
+                                                                                                                                                                                                                                            background:#edf6ed;
+                                                                                                                                                                                                                                            color:#67836b}
+                                                                                                                                                                                                                                            .rankitem{
+                                                                                                                                                                                                                                              border-bottom-color:#edf1ed}
+                                                                                                                                                                                                                                              .rankitem span{
+                                                                                                                                                                                                                                                color:#758278}
+                                                                                                                                                                                                                                                .rankitem b{
+                                                                                                                                                                                                                                                  color:#4b5d50}
+  </style>
+ </head>
+ <body>
+  <div class="layout">
+   <aside class="sidebar">
+    <div class="brand">
+     <div class="logo">
+      EN
+     </div>
+     <div>
+      Essência Nova
+      <small style="display:block;font-size:10px;color:#8798b7;font-weight:500">
+       Mobilidade urbana
+      </small>
+     </div>
+    </div>
+    <div class="navlabel">
+     Painel
+    </div>
+    <nav class="nav">
+     <a class="active" href="#visao">
+      <span class="ico">
+       ▦
+      </span>
+      Visão geral
+     </a>
+     <a href="#analises">
+      <span class="ico">
+       ◫
+      </span>
+      Análises
+     </a>
+     <a href="#registros">
+      <span class="ico">
+       ☷
+      </span>
+      Registros
+     </a>
+    </nav>
+    <div class="sidefoot">
+     Projeto de análise de problemas de mobilidade
+     <br/>
+     Base de dados: 20 ocorrências
+    </div>
+   </aside>
+   <main class="main">
+    <header class="top">
+     <div>
+      <div class="eyebrow">
+       Painel de inteligência urbana
+      </div>
+      <h1 class="h1">
+       Dashboard de Mobilidade
+      </h1>
+      <div class="sub">
+       Visão consolidada dos problemas de trânsito em Maringá · Paraná
+       <br/>
+       <span style="display:inline-block;margin-top:7px;color:#718176;font-size:12px">
+        Explore os filtros para comparar tipos, locais e períodos. Os números e gráficos são atualizados automaticamente.
+       </span>
+      </div>
+     </div>
+     <div class="actions">
+      <button class="btn" onclick="window.print()">
+       ⇩ Exportar PDF
+      </button>
+      <button class="btn primary" onclick="exportCSV()">
+       ↓ Exportar CSV
+      </button>
+     </div>
+    </header>
+    <section class="filters">
+     <div class="field">
+      <label for="typeFilter">
+       Tipo de problema
+      </label>
+      <select id="typeFilter">
+       <option value="">
+        Todos os tipos
+       </option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="locationFilter">
+       Local
+      </label>
+      <select id="locationFilter">
+       <option value="">
+        Todos os locais
+       </option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="periodFilter">
+       Faixa de horário
+      </label>
+      <select id="periodFilter">
+       <option value="">
+        Todos os horários
+       </option>
+       <option value="manha">
+        Manhã (antes de 12h)
+       </option>
+       <option value="almoco">
+        Almoço (12h–14h)
+       </option>
+       <option value="tarde">
+        Fim do dia (após 16h)
+       </option>
+      </select>
+     </div>
+     <button class="btn" onclick="resetFilters()">
+      Limpar filtros
+     </button>
+     <div class="filter-note" id="filterNote">
+      Exibindo 20 de 20 registros
+     </div>
+    </section>
+    <section class="kpis" id="visao">
+     <article class="card">
+      <div class="kpihead">
+       Ocorrências registradas
+       <span class="kpiicon">
+        ▤
+       </span>
+      </div>
+      <div class="kpinum" id="kTotal">
+       20
+      </div>
+      <div class="kpismall">
+       Registros na seleção atual
+      </div>
+     </article>
+     <article class="card">
+      <div class="kpihead">
+       Tipos de problema
+       <span class="kpiicon" style="background:#e9f8f5;color:#18a999">
+        ◈
+       </span>
+      </div>
+      <div class="kpinum" id="kTypes">
+       3
+      </div>
+      <div class="kpismall">
+       Categorias identificadas
+      </div>
+     </article>
+     <article class="card">
+      <div class="kpihead">
+       Locais identificados
+       <span class="kpiicon" style="background:#fff4e8;color:#e49a3b">
+        ⌖
+       </span>
+      </div>
+      <div class="kpinum" id="kLocations">
+       14
+      </div>
+      <div class="kpismall">
+       Pontos e regiões citados
+      </div>
+     </article>
+     <article class="card">
+      <div class="kpihead">
+       Soluções propostas
+       <span class="kpiicon" style="background:#f2edff;color:#8a70d6">
+        ✧
+       </span>
+      </div>
+      <div class="kpinum" id="kSolutions">
+       20
+      </div>
+      <div class="kpismall">
+       Medidas registradas na base
+      </div>
+     </article>
+    </section>
+    <section class="grid2" id="analises">
+     <article class="card">
+      <h2 class="cardtitle">
+       Ocorrências por tipo
+      </h2>
+      <p class="carddesc">
+       Distribuição das categorias na seleção atual
+      </p>
+      <div class="bars" id="typeBars">
+      </div>
+      <div class="insight" id="typeInsight">
+      </div>
+     </article>
+     <article class="card">
+      <h2 class="cardtitle">
+       Participação por categoria
+      </h2>
+      <p class="carddesc">
+       Proporção de cada tipo de problema
+      </p>
+      <div class="donutwrap">
+       <div class="donut" id="donut">
+        <div class="donutcenter" id="donutCenter">
+         20
+         <small>
+          ocorrências
+         </small>
+        </div>
+       </div>
+       <div class="legend" id="typeLegend">
+       </div>
+      </div>
+     </article>
+    </section>
+    <section class="grid3">
+     <article class="card">
+      <h2 class="cardtitle">
+       Locais mais citados
+      </h2>
+      <p class="carddesc">
+       Quantidade de registros por local
+      </p>
+      <div class="bars listbars" id="locationBars">
+      </div>
+     </article>
+     <article class="card">
+      <h2 class="cardtitle">
+       Faixas de horário
+      </h2>
+      <p class="carddesc">
+       Classificação aproximada a partir dos horários descritos
+      </p>
+      <div class="bars" id="periodBars">
+      </div>
+      <div class="insight">
+       A classificação considera o horário inicial informado na descrição de cada ocorrência.
+      </div>
+     </article>
+     <article class="card">
+      <h2 class="cardtitle">
+       Leitura dos dados
+      </h2>
+      <p class="carddesc">
+       Destaques da base original
+      </p>
+      <div class="ranklist" id="highlights">
+      </div>
+     </article>
+    </section>
+    <section class="card tablecard" id="registros">
+     <div class="tabletop">
+      <div>
+       <h2 class="cardtitle">
+        Registros de ocorrências
+       </h2>
+       <div class="carddesc" style="margin-bottom:0">
+        Detalhamento das causas, impactos e medidas propostas
+       </div>
+      </div>
+      <input aria-label="Buscar nos registros" id="search" placeholder="Buscar nos registros…"/>
+     </div>
+     <div class="scroll">
+      <table>
+       <thead>
+        <tr>
+         <th>
+          ID
+         </th>
+         <th>
+          Tipo
+         </th>
+         <th>
+          Local
+         </th>
+         <th>
+          Descrição
+         </th>
+         <th>
+          Causa principal
+         </th>
+         <th>
+          Impacto
+         </th>
+         <th>
+          Medida / solução
+         </th>
+        </tr>
+       </thead>
+       <tbody id="tbody">
+       </tbody>
+      </table>
+      <div class="empty" hidden="" id="empty">
+       Nenhum registro encontrado para os filtros selecionados.
+      </div>
+     </div>
+    </section>
+    <div class="footer">
+     Fonte: base essencia.csv e evidências JSON do projeto · Os totais refletem os dados fornecidos
+    </div>
+   </main>
+  </div>
+  <script>
+   const DATA=[
+  {
+    "id": "1",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Brasil",
+    "descricao": "Trânsito intenso entre 07:00 e 09:00",
+    "causa_principal": "Grande fluxo de veículos no início do expediente e das aulas",
+    "impacto": "Aumento do tempo de deslocamento e congestionamentos",
+    "medida_solucao": "Sincronização semafórica e incentivo ao transporte coletivo"
+  },
+  {
+    "id": "2",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Colombo",
+    "descricao": "Trânsito intenso entre 17:00 e 19:00",
+    "causa_principal": "Grande volume de veículos no fim do expediente",
+    "impacto": "Filas e lentidão nas principais interseções",
+    "medida_solucao": "Ajuste dos tempos semafóricos e fiscalização"
+  },
+  {
+    "id": "3",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Mandacaru",
+    "descricao": "Movimento elevado entre 07:00 e 08:30",
+    "causa_principal": "Concentração de deslocamentos para trabalho e escolas",
+    "impacto": "Lentidão e aumento do tempo de viagem",
+    "medida_solucao": "Melhoria da sinalização e planejamento dos cruzamentos"
+  },
+  {
+    "id": "4",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Morangueira",
+    "descricao": "Movimento elevado entre 17:00 e 19:00",
+    "causa_principal": "Fluxo de veículos no retorno para bairros residenciais",
+    "impacto": "Formação de filas nos cruzamentos",
+    "medida_solucao": "Sincronização de semáforos"
+  },
+  {
+    "id": "5",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Centro de Maringá",
+    "descricao": "Grande concentração de veículos entre 08:00 e 09:00",
+    "causa_principal": "Concentração de comércio e serviços",
+    "impacto": "Dificuldade de circulação e estacionamento",
+    "medida_solucao": "Ampliação de transporte coletivo e controle de estacionamento"
+  },
+  {
+    "id": "6",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Paraná",
+    "descricao": "Movimento elevado entre 17:00 e 19:00",
+    "causa_principal": "Saída do centro e retorno para bairros",
+    "impacto": "Redução da velocidade média",
+    "medida_solucao": "Melhoria da coordenação semafórica"
+  },
+  {
+    "id": "7",
+    "tipo_problema": "Trânsito escolar",
+    "local_exemplo": "Região central",
+    "descricao": "Trânsito elevado entre 07:00 e 08:00",
+    "causa_principal": "Entrada de alunos e veículos particulares",
+    "impacto": "Filas próximas às escolas",
+    "medida_solucao": "Áreas de embarque e desembarque e fiscalização"
+  },
+  {
+    "id": "8",
+    "tipo_problema": "Trânsito escolar",
+    "local_exemplo": "Av. São Paulo",
+    "descricao": "Trânsito elevado entre 12:00 e 13:30",
+    "causa_principal": "Saída e entrada de estudantes",
+    "impacto": "Retenção temporária do tráfego",
+    "medida_solucao": "Organização do embarque e desembarque"
+  },
+  {
+    "id": "9",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Tiradentes",
+    "descricao": "Trânsito intenso entre 17:00 e 19:00",
+    "causa_principal": "Concentração de veículos no fim do dia",
+    "impacto": "Aumento da retenção nos cruzamentos",
+    "medida_solucao": "Sincronização semafórica"
+  },
+  {
+    "id": "10",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Kakogawa",
+    "descricao": "Fluxo elevado entre 07:00 e 09:00",
+    "causa_principal": "Deslocamentos entre bairros e áreas de trabalho",
+    "impacto": "Lentidão nos horários de maior demanda",
+    "medida_solucao": "Revisão da sinalização e dos tempos semafóricos"
+  },
+  {
+    "id": "11",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Gastão Vidigal",
+    "descricao": "Fluxo elevado entre 17:00 e 19:00",
+    "causa_principal": "Retorno do trabalho e atividades comerciais",
+    "impacto": "Aumento das filas",
+    "medida_solucao": "Gestão inteligente do tráfego"
+  },
+  {
+    "id": "12",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Cerro Azul",
+    "descricao": "Movimento elevado entre 07:00 e 09:00",
+    "causa_principal": "Concentração de deslocamentos matinais",
+    "impacto": "Redução da velocidade e atrasos",
+    "medida_solucao": "Melhoria da sincronização semafórica"
+  },
+  {
+    "id": "13",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Brasil",
+    "descricao": "Trânsito intenso entre 17:00 e 19:00",
+    "causa_principal": "Retorno do trabalho e aumento das atividades comerciais",
+    "impacto": "Longos tempos de deslocamento",
+    "medida_solucao": "Operação de tráfego nos horários de pico"
+  },
+  {
+    "id": "14",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Colombo",
+    "descricao": "Movimento elevado entre 07:00 e 09:00",
+    "causa_principal": "Fluxo de veículos em direção a áreas de trabalho e estudo",
+    "impacto": "Formação de filas",
+    "medida_solucao": "Monitoramento e controle de tráfego"
+  },
+  {
+    "id": "15",
+    "tipo_problema": "Trânsito escolar",
+    "local_exemplo": "Região da UEM",
+    "descricao": "Movimento elevado entre 07:00 e 08:30",
+    "causa_principal": "Entrada de estudantes e funcionários",
+    "impacto": "Retenção nas vias próximas",
+    "medida_solucao": "Gestão de circulação e transporte coletivo"
+  },
+  {
+    "id": "16",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Herval",
+    "descricao": "Movimento elevado entre 17:00 e 19:00",
+    "causa_principal": "Saída do centro e deslocamento para bairros",
+    "impacto": "Lentidão nos cruzamentos",
+    "medida_solucao": "Sincronização dos semáforos"
+  },
+  {
+    "id": "17",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Brasil",
+    "descricao": "Movimento elevado entre 07:00 e 09:00",
+    "causa_principal": "Fluxo de trabalhadores e estudantes",
+    "impacto": "Aumento do tempo de viagem",
+    "medida_solucao": "Melhoria do transporte público"
+  },
+  {
+    "id": "18",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Av. Morangueira",
+    "descricao": "Movimento elevado entre 17:00 e 19:00",
+    "causa_principal": "Grande fluxo de retorno para bairros",
+    "impacto": "Filas e lentidão",
+    "medida_solucao": "Controle semafórico adaptativo"
+  },
+  {
+    "id": "19",
+    "tipo_problema": "Trânsito intenso",
+    "local_exemplo": "Centro de Maringá",
+    "descricao": "Movimento elevado entre 12:00 e 14:00",
+    "causa_principal": "Concentração de comércio e serviços no horário de almoço",
+    "impacto": "Redução da fluidez do tráfego",
+    "medida_solucao": "Gestão de vagas e transporte coletivo"
+  },
+  {
+    "id": "20",
+    "tipo_problema": "Horário de pico",
+    "local_exemplo": "Av. Colombo",
+    "descricao": "Trânsito intenso entre 17:00 e 19:00",
+    "causa_principal": "Fluxo elevado no fim do expediente",
+    "impacto": "Congestionamentos pontuais",
+    "medida_solucao": "Monitoramento em tempo real"
+  }
+];
+
+const META={
+  "summary": {
+    "total_registros": 20,
+    "total_tipos_problema": 3,
+    "total_locais": 14,
+    "total_causas": 20,
+    "total_impactos": 20,
+    "total_solucoes": 20
+  },
+  "types": [
+    {
+      "tipo_problema": "Trânsito intenso",
+      "quantidade": 10
+    },
+    {
+      "tipo_problema": "Horário de pico",
+      "quantidade": 7
+    },
+    {
+      "tipo_problema": "Trânsito escolar",
+      "quantidade": 3
+    }
+  ],
+  "locations": [
+    {
+      "local_exemplo": "Av. Brasil",
+      "quantidade": 3
+    },
+    {
+      "local_exemplo": "Av. Colombo",
+      "quantidade": 3
+    },
+    {
+      "local_exemplo": "Centro de Maringá",
+      "quantidade": 2
+    },
+    {
+      "local_exemplo": "Av. Morangueira",
+      "quantidade": 2
+    },
+    {
+      "local_exemplo": "Av. Cerro Azul",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Gastão Vidigal",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Kakogawa",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Herval",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Paraná",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Mandacaru",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. São Paulo",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Av. Tiradentes",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Região central",
+      "quantidade": 1
+    },
+    {
+      "local_exemplo": "Região da UEM",
+      "quantidade": 1
+    }
+  ],
+  "causes": [
+    {
+      "causa_principal": "Concentração de comércio e serviços",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Concentração de comércio e serviços no horário de almoço",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Concentração de deslocamentos matinais",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Concentração de deslocamentos para trabalho e escolas",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Concentração de veículos no fim do dia",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Deslocamentos entre bairros e áreas de trabalho",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Entrada de alunos e veículos particulares",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Entrada de estudantes e funcionários",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Fluxo de trabalhadores e estudantes",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Fluxo de veículos em direção a áreas de trabalho e estudo",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Fluxo de veículos no retorno para bairros residenciais",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Fluxo elevado no fim do expediente",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Grande fluxo de retorno para bairros",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Grande fluxo de veículos no início do expediente e das aulas",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Grande volume de veículos no fim do expediente",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Retorno do trabalho e atividades comerciais",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Retorno do trabalho e aumento das atividades comerciais",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Saída do centro e deslocamento para bairros",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Saída do centro e retorno para bairros",
+      "quantidade": 1
+    },
+    {
+      "causa_principal": "Saída e entrada de estudantes",
+      "quantidade": 1
+    }
+  ],
+  "impacts": [
+    {
+      "impacto": "Aumento da retenção nos cruzamentos",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Aumento das filas",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Aumento do tempo de deslocamento e congestionamentos",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Aumento do tempo de viagem",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Congestionamentos pontuais",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Dificuldade de circulação e estacionamento",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Filas e lentidão",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Filas e lentidão nas principais interseções",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Filas próximas às escolas",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Formação de filas",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Formação de filas nos cruzamentos",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Lentidão e aumento do tempo de viagem",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Lentidão nos cruzamentos",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Lentidão nos horários de maior demanda",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Longos tempos de deslocamento",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Redução da fluidez do tráfego",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Redução da velocidade e atrasos",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Redução da velocidade média",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Retenção nas vias próximas",
+      "quantidade": 1
+    },
+    {
+      "impacto": "Retenção temporária do tráfego",
+      "quantidade": 1
+    }
+  ]
+};
+
+const COLORS=['#4568e8','#18a999','#f2a64a','#8a70d6','#e16d78'];
+
+let filtered=[...DATA];
+
+const $=id=>document.getElementById(id);
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function unique(k){return [...new Set(DATA.map(x=>x[k]))].sort((a,b)=>a.localeCompare(b,'pt-BR'))}
+
+function fillSelect(id,vals){vals.forEach(v=>{let o=document.createElement('option');o.value=v;o.textContent=v;$(id).append(o)})}
+
+fillSelect('typeFilter',unique('tipo_problema'));fillSelect('locationFilter',unique('local_exemplo'));['typeFilter','locationFilter','periodFilter','search'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',apply));
+
+function getPeriod(r){let m=r.descricao.match(/entre (\d{2}):|entre (\d{2})/i)||r.descricao.match(/(\d{2}):\d{2}/);let h=m?Number(m[1]||m[2]):null;if(h===null)return 'outro';return h<12?'manha':h<=14?'almoco':h>=16?'tarde':'outro'}
+
+function apply(){let t=$('typeFilter').value,l=$('locationFilter').value,p=$('periodFilter').value,q=$('search').value.toLocaleLowerCase('pt-BR');filtered=DATA.filter(r=>(!t||r.tipo_problema===t)&&(!l||r.local_exemplo===l)&&(!p||getPeriod(r)===p)&&(!q||Object.values(r).join(' ').toLocaleLowerCase('pt-BR').includes(q)));render()}
+
+function resetFilters(){['typeFilter','locationFilter','periodFilter','search'].forEach(id=>$(id).value='');apply()}
+
+function counts(arr,key){let o={};arr.forEach(r=>o[r[key]]=(o[r[key]]||0)+1);return Object.entries(o).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'pt-BR'))}
+
+function bars(id,entries,colors=COLORS){let max=Math.max(1,...entries.map(x=>x[1]));$(id).innerHTML=entries.map(([name,n],i)=>`<div class="barrow"><div class="barlabel" title="${esc(name)}">${esc(name)}</div><div class="track"><div class="fill" style="width:${n/max*100}%;background:${colors[i%colors.length]}"></div></div><div class="barval">${n}</div></div>`).join('')||'<div class="empty">Sem dados</div>'}
+
+function render(){let n=filtered.length,tc=counts(filtered,'tipo_problema'),lc=counts(filtered,'local_exemplo');$('kTotal').textContent=n;$('kTypes').textContent=tc.length;$('kLocations').textContent=lc.length;$('kSolutions').textContent=n;$('filterNote').textContent=`Exibindo ${n} de ${DATA.length} registros`;bars('typeBars',tc);bars('locationBars',lc.slice(0,7));let period=[['Manhã',filtered.filter(r=>getPeriod(r)==='manha').length],['Almoço',filtered.filter(r=>getPeriod(r)==='almoco').length],['Fim do dia',filtered.filter(r=>getPeriod(r)==='tarde').length],['Não classificado',filtered.filter(r=>getPeriod(r)==='outro').length]].filter(x=>x[1]);bars('periodBars',period,['#4568e8','#18a999','#f2a64a','#aab3c4']);let total=Math.max(1,n),acc=0,stops=tc.map((x,i)=>{let start=acc;acc+=x[1]/total*100;return `${COLORS[i%COLORS.length]} ${start}% ${acc}%`});$('donut').style.background=stops.length?`conic-gradient(${stops.join(',')})`:'#e9edf5';$('donutCenter').innerHTML=`${n}<small>ocorrências</small>`;$('typeLegend').innerHTML=tc.map(([name,val],i)=>`<div class="leg"><i class="dot" style="background:${COLORS[i%COLORS.length]}"></i><span>${esc(name)}</span><b>${n?Math.round(val/n*100):0}%</b></div>`).join('');let top=tc[0];$('typeInsight').innerHTML=top?`<strong>${esc(top[0])}</strong> é a categoria mais frequente, com ${top[1]} de ${n} registros (${Math.round(top[1]/n*100)}%).`:'Sem ocorrências para exibir.';let highlights=[['Local mais citado',lc[0]?.[0]||'—',lc[0]?.[1]||0],['Tipo mais frequente',top?.[0]||'—',top?.[1]||0],['Causas registradas',n,n],['Impactos registrados',n,n]];$('highlights').innerHTML=highlights.map(([a,b,c])=>`<div class="rankitem"><span>${a}</span><b>${esc(b)} ${c?`<small class="tag">${c}</small>`:''}</b></div>`).join('');$('tbody').innerHTML=filtered.map(r=>`<tr><td>#${r.id}</td><td><span class="pill">${esc(r.tipo_problema)}</span></td><td>${esc(r.local_exemplo)}</td><td>${esc(r.descricao)}</td><td>${esc(r.causa_principal)}</td><td>${esc(r.impacto)}</td><td>${esc(r.medida_solucao)}</td></tr>`).join('');$('empty').hidden=filtered.length>0}
+
+function exportCSV(){let cols=['id','tipo_problema','local_exemplo','descricao','causa_principal','impacto','medida_solucao'];let lines=[cols.join(';'),...filtered.map(r=>cols.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(';'))];let blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='essencia_nova_registros.csv';a.click();URL.revokeObjectURL(url)}
+
+render();
+  </script>
+ </body>
+</html>

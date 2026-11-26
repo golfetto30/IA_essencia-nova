@@ -1,0 +1,64 @@
+
+import json
+import os
+from urllib.request import Request, urlopen
+
+
+def explicar(pergunta, resultado):
+    modelo = os.getenv("OLLAMA_MODELO", "llama3.2:1b")
+
+    corpo = {
+        "model": modelo,
+        "stream": False,
+        "options": {
+            "temperature": 0,
+            "num_predict": 180
+        },
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "Você é a IA do Essência Nova, um projeto de "
+                    "mobilidade urbana e segurança no trânsito. "
+                    "Explique os resultados em português brasileiro "
+                    "de forma simples, clara e objetiva. "
+                    "Use somente os dados recebidos. "
+                    "Não invente números, locais, acidentes, "
+                    "causas ou informações sobre GPS. "
+                    "Se os dados forem insuficientes, informe isso. "
+                    "Sugira medidas de mobilidade apenas como "
+                    "possibilidades, não como fatos comprovados. "
+                    "Responda em até três frases."
+                )
+            },
+            {
+                "role": "user",
+                "content": json.dumps(
+                    {
+                        "pergunta": pergunta,
+                        "resultado": resultado
+                    },
+                    ensure_ascii=False
+                )
+            }
+        ]
+    }
+
+    pedido = Request(
+        "http://127.0.0.1:11434/api/chat",
+        data=json.dumps(corpo).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+        method="POST"
+    )
+
+    with urlopen(pedido, timeout=90) as resposta:
+        dados = json.load(resposta)
+        texto = dados["message"]["content"]
+
+        if not isinstance(texto, str) or not texto.strip():
+            raise ValueError(
+                "A IA não devolveu uma explicação válida."
+            )
+
+        return texto.strip()
+0
